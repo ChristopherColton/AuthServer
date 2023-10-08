@@ -1,0 +1,8 @@
+containers: auth: {
+    image: "polideck/auth:latest"
+    dependsOn: ["keydb"]
+    ports: publish: "80/http"
+    env: {
+            "JWTSECRET": "secret://jwtsecret/token"
+    }
+}
